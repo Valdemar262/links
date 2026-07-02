@@ -16,9 +16,9 @@ class LinkClickRecorder
         DB::transaction(function () use ($shortLink, $ipAddress, $userAgent): void {
             LinkClick::query()->create([
                 'short_link_id' => $shortLink->id,
-                'ip_address'    => $ipAddress,
-                'user_agent'    => mb_substr((string)$userAgent, 0, 512),
-                'clicked_at'    => now(),
+                'ip_address' => $ipAddress,
+                'user_agent' => mb_substr((string) $userAgent, 0, 512),
+                'clicked_at' => now(),
             ]);
 
             ShortLink::query()

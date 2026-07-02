@@ -13,7 +13,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('original_url', 2048);
             $table->string('code', 16)->unique();
-            $table->unsignedTinyInteger('clicks_count')->default(0);
+            $table->unsignedBigInteger('clicks_count')->default(0);
             $table->timestamps();
             $table->softDeletes();
 
